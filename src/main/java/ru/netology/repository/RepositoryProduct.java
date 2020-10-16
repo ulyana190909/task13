@@ -5,7 +5,6 @@ import ru.netology.exception.NotFoundException;
 
 public class RepositoryProduct {
     private Product[] items = new Product[0];
-    private NotFoundException notFoundException = new NotFoundException();
 
     public void save(Product item) {
         int length = items.length + 1;
@@ -21,15 +20,20 @@ public class RepositoryProduct {
     }
 
     public Product[] removeById(int id) {
+        Product deleteId = findById(id);
+        if(deleteId == null) {
+            throw new NotFoundException ("Element with id: " + id + " not found");
+            }
+
         int length = items.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;
-        Product deleteId = findById(id);
-        if(deleteId == null) {
-            throw new NotFoundException();
+        for (Product item : items ) {
+            if (item.getId() != id) {
+                tmp[index] = item;
+                index++;
             }
-        tmp[index] = deleteId;
-        index++;
+        }
         items = tmp;
         return tmp;
     }
