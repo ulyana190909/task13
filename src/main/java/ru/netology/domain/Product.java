@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
-  private int id;
-  private String name;
-  private int price;
+    private int id;
+    private String name;
+    private int price;
 
-  public boolean matches(String search) {
-    if (search.equalsIgnoreCase(name)) {
-      return true;
+    public boolean matches(String search) {
+        if (search.equalsIgnoreCase(name)) {
+            return true;
+        }
+        return false;
     }
-    return false;
-  }
-
 }
+
