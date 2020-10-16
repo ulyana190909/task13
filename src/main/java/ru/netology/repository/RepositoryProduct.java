@@ -26,8 +26,8 @@ public class RepositoryProduct {
         int index = 0;
         Product deleteId = findById(id);
         if(deleteId == null) {
-            return notFoundException.createException();
-        }
+            throw new NotFoundException();
+            }
         tmp[index] = deleteId;
         index++;
         items = tmp;

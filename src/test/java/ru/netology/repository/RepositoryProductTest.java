@@ -2,7 +2,6 @@ package ru.netology.repository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.SmartPhone;
